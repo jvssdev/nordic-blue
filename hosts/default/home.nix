@@ -15,6 +15,7 @@ in
     stateVersion = stateVersion;
     file = {
       ".config/river".source = ../../dotfiles/.config/river;
+      ".config/mako".source = ../../dotfiles/.config/mako;
       ".config/wlogout/icons".source = ../../config/wlogout;
       ".zshrc".source = ../../dotfiles/.config/zsh/.zshrc;
       #".gitconfig".source = ../../dotfiles/.gitconfig;
