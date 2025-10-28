@@ -235,7 +235,7 @@ in
 
     gopls
     golangci-lint
-
+    waylock
     btop
     rclone
 
@@ -455,7 +455,6 @@ in
         })
       '';
     };
-    pam.services.swaylock.text = "auth include login";
   };
 
   nix = {

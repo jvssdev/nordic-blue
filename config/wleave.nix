@@ -1,7 +1,7 @@
 { config, ... }:
 
 {
-  programs.wlogout = {
+  programs.wleave = {
     enable = true;
     layout = [
       {
@@ -14,31 +14,31 @@
         "label" = "reboot";
         "action" = "sleep 1; systemctl reboot";
         "text" = "Reboot";
-        "keybind" = "r";
+        #"keybind" = "r";
       }
-      # {
-      #   "label" = "logout";
-      #   "action" = "sleep 1; hyprctl dispatch exit";
-      #   "text" = "Exit";
-      #   "keybind" = "e";
-      # }
+      {
+        "label" = "logout";
+        "action" = "sleep 1; riverctl exit";
+        "text" = "Exit";
+        #"keybind" = "e";
+      }
       {
         "label" = "suspend";
         "action" = "sleep 1; systemctl suspend";
         "text" = "Suspend";
-        "keybind" = "u";
+        #"keybind" = "u";
       }
-      # {
-      #   "label" = "lock";
-      #   "action" = "sleep 1; hyprlock";
-      #   "text" = "Lock";
-      #   "keybind" = "l";
-      # }
+      {
+        "label" = "lock";
+        "action" = "sleep 1; waylock";
+        "text" = "Lock";
+        #"keybind" = "l";
+      }
       {
         "label" = "hibernate";
         "action" = "sleep 1; systemctl hibernate";
         "text" = "Hibernate";
-        "keybind" = "h";
+        #"keybind" = "h";
       }
     ];
     style = ''

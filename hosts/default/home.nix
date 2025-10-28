@@ -16,11 +16,16 @@ in
     file = {
       ".config/river".source = ../../dotfiles/.config/river;
       ".config/mako".source = ../../dotfiles/.config/mako;
-      ".config/wlogout/icons".source = ../../config/wlogout;
+      ".config/rmpc".source = ../../dotfiles/.config/rmpc;
+      ".config/mpd".source = ../../dotfiles/.config/mpd;
+      ".config/zed".source = ../../dotfiles/.config/zed;
+      ".config/wleave/icons".source = ../../config/wleave;
       ".zshrc".source = ../../dotfiles/.config/zsh/.zshrc;
       #".gitconfig".source = ../../dotfiles/.gitconfig;
       ".local/bin/wallpaper".source = ../../dotfiles/.local/bin/wallpaper;
       ".config/fastfetch".source = ../../dotfiles/.config/fastfetch;
+      ".config/btop".source = ../../dotfiles/.config/btop;
+      ".config/lazygit".source = ../../dotfiles/.config/lazygit;
       #".config/mpv".source = ../../dotfiles/.config/mpv;
       ".config/waybar".source = ../../dotfiles/.config/waybar;
       ".config/yazi".source = ../../dotfiles/.config/yazi;
@@ -58,7 +63,7 @@ in
   };
 
   imports = [
-    ../../config/wlogout.nix
+    ../../config/wleave.nix
   ];
 
   programs = {
