@@ -235,7 +235,7 @@ in
 
     gopls
     golangci-lint
-    waylock
+    gtklock
     btop
     rclone
 

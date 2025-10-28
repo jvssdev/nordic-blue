@@ -30,7 +30,7 @@
       }
       {
         "label" = "lock";
-        "action" = "sleep 1; waylock";
+        "action" = "sleep 1; gtklock";
         "text" = "Lock";
         #"keybind" = "l";
       }
