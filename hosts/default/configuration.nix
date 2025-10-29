@@ -187,7 +187,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    neovim
+    helix
     nano
     zed-editor
     biome
@@ -242,7 +242,7 @@ in
     rclone
     keepassxc
     anydesk
-
+    lmstudio
     qbittorrent
 
     ffmpeg

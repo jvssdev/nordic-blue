@@ -21,8 +21,10 @@ in
     ];
     file = {
       ".config/river".source = ../../dotfiles/.config/river;
+      ".config/gtklock".source = ../../dotfiles/.config/gtklock;
       ".config/mako".source = ../../dotfiles/.config/mako;
       ".config/rmpc".source = ../../dotfiles/.config/rmpc;
+      ".config/helix".source = ../../dotfiles/.config/helix;
       ".config/mpd".source = ../../dotfiles/.config/mpd;
       ".config/zed".source = ../../dotfiles/.config/zed;
       ".config/wleave/icons".source = ../../config/wleave;
@@ -46,8 +48,8 @@ in
     };
     sessionVariables = {
       # Default applications
-      EDITOR = "nvim";
-      VISUAL = "nvim";
+      EDITOR = "hx";
+      VISUAL = "hx";
       TERMINAL = "ghostty";
       BROWSER = "zen";
       # XDG Base Directories
