@@ -5,7 +5,11 @@ riverctl xcursor-theme "Bibata-Modern-Ice" 30
 
 #autostart
 riverctl spawn "dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS SEATD_SOCK DISPLAY WAYLAND_DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP=river"
-riverctl spawn "swww-daemon >/dev/null 2>&1 &"
+riverctl spawn "wpaperd  >/dev/null 2>&1 &"
+riverctl spawn "waybar -d >/dev/null 2>&1"
+riverctl spawn "pipewire -d >/dev/null 2>&1"
+riverctl spawn "mpc -d >/dev/null 2>&1"
+riverctl spawn "hypridle -d >/dev/null 2>&1"
 #riverctl spawn "waybar -c ~/.config/waybar/river/config -s ~/.config/waybar/river/style.css"
 riverctl spawn "nm-applet --indicator"
 riverctl spawn "blueman-applet"
@@ -179,18 +183,13 @@ riverctl rule-add -app-id "bar" csd
 riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 &
 
-# Touchpad Settings
-# Get device name from riverctl list-inputs
-riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" tap enabled
-riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" accel-profile flat
-riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" natural-scroll enabled
-riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" disable-while-typing enabled
-riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" disable-while-trackpointing enabled
-
-riverctl input "pointer-1267-12484-DELL0979:00_04F3:30C4_Touchpad" tap enabled
-riverctl input "pointer-1267-12484-DELL0979:00_04F3:30C4_Touchpad" accel-profile flat
-riverctl input "pointer-1267-12484-DELL0979:00_04F3:30C4_Touchpad" natural-scroll enabled
-riverctl input "pointer-1267-12484-DELL0979:00_04F3:30C4_Touchpad" disable-while-typing enabled
-riverctl input "pointer-1267-12484-DELL0979:00_04F3:30C4_Touchpad" disable-while-trackpointing enabled
-
-riverctl input "pointer-7119-5-USB_Optical_Mouse" middle-emulation enabled
+touchpad=$(riverctl list-inputs | rg "*Touchpad")
+riverctl input "$touchpad" pointer-accel 0.35
+riverctl input "$touchpad" scroll-factor 1.30
+riverctl input "$touchpad" click-method clickfinger
+riverctl input "$touchpad" accel-profile adaptive
+riverctl input "$touchpad" tap enabled
+riverctl input "$touchpad" tap-button-map left-right-middle
+riverctl input "$touchpad" drag disabled
+riverctl input "$touchpad" disable-while-typing enabled
+riverctl input "$touchpad" natural-scroll enabled

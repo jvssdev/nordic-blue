@@ -13,6 +13,12 @@ in
     username = userName;
     homeDirectory = homeDirectory;
     stateVersion = stateVersion;
+    packages = [
+      pkgs.libsForQt6.kvantum
+      pkgs.libsForQt5.kvantum
+      pkgs.qt5ct
+      pkgs.qt6ct
+    ];
     file = {
       ".config/river".source = ../../dotfiles/.config/river;
       ".config/mako".source = ../../dotfiles/.config/mako;
@@ -55,6 +61,7 @@ in
       XDG_CURRENT_DESKTOP = "River";
       XDG_SESSION_DESKTOP = "River";
       LC_ALL = "en_US.UTF-8";
+      QT_QPA_PLATFORMTHEME = "qt6ct";
     };
     sessionPath = [
       "$HOME/.local/bin"
@@ -80,6 +87,10 @@ in
   stylix.targets.waybar.enable = false;
 
   gtk = {
+    theme = {
+      name = "Nordic";
+      package = pkgs.nordic;
+    };
     iconTheme = {
       name = "Nordzy-dark";
       package = pkgs.nordzy-icon-theme;
@@ -95,7 +106,7 @@ in
   qt = {
     enable = true;
     style.name = "kvantum";
-    platformTheme.name = "qtct";
+    platformTheme.name = "qt6ct";
   };
 
   # services.hypridle = {

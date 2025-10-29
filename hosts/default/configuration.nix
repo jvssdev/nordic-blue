@@ -190,7 +190,8 @@ in
     neovim
     nano
     zed-editor
-
+    biome
+    prettierd
     inputs.zen-browser.packages."${system}".default
 
     go
@@ -232,23 +233,22 @@ in
     mpd-mpris
     playerctl
     rmpc
-
+    hypridle
+    wleave
     gopls
     golangci-lint
     gtklock
     btop
     rclone
-
+    keepassxc
     anydesk
 
     qbittorrent
 
-    pulseaudio
-    pavucontrol
     ffmpeg
     mpv
-
-    swww
+    gammastep
+    wpaperd
     imv
 
     libgcc
@@ -269,7 +269,7 @@ in
     fuzzel
     mako
     wl-clipboard
-
+    pavucontrol
     libvirt
     qemu
     virt-manager
